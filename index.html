@@ -1,0 +1,452 @@
+<!DOCTYPE html>
+<html lang="bn">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Life Is Green | সবুজ পৃথিবী, সুস্থ জীবন</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Hind+Siliguri:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --primary: #1b5e20;
+      --primary-light: #2e7d32;
+      --accent: #66bb6a;
+      --bg-light: #f4f9f4;
+      --text-dark: #1f2933;
+      --text-muted: #52606d;
+      --white: #ffffff;
+      --shadow: 0 8px 24px rgba(27, 94, 32, 0.08);
+      --radius: 12px;
+    }
+
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
+
+    body {
+      font-family: 'Hind Siliguri', sans-serif;
+      background-color: var(--bg-light);
+      color: var(--text-dark);
+      line-height: 1.7;
+    }
+
+    /* Navigation */
+    header {
+      background-color: var(--white);
+      box-shadow: 0 2px 12px rgba(0, 0, 0, 0.06);
+      position: sticky;
+      top: 0;
+      z-index: 1000;
+    }
+
+    .nav-container {
+      max-width: 1140px;
+      margin: 0 auto;
+      padding: 1rem 1.5rem;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    .logo {
+      font-size: 1.6rem;
+      font-weight: 700;
+      color: var(--primary);
+      text-decoration: none;
+      display: flex;
+      align-items: center;
+      gap: 0.4rem;
+    }
+
+    nav ul {
+      list-style: none;
+      display: flex;
+      gap: 1.8rem;
+    }
+
+    nav a {
+      text-decoration: none;
+      color: var(--text-dark);
+      font-weight: 600;
+      transition: color 0.25s ease;
+    }
+
+    nav a:hover {
+      color: var(--primary-light);
+    }
+
+    /* Hero Section */
+    .hero {
+      background: linear-gradient(135deg, rgba(27, 94, 32, 0.88), rgba(46, 125, 50, 0.82)),
+                  url('https://images.unsplash.com/photo-1441974231531-c6227db76b6e?auto=format&fit=crop&w=1400&q=80') center/cover no-repeat;
+      color: var(--white);
+      text-align: center;
+      padding: 6.5rem 1.5rem;
+    }
+
+    .hero-content {
+      max-width: 760px;
+      margin: 0 auto;
+    }
+
+    .hero h1 {
+      font-size: clamp(2.2rem, 5vw, 3.4rem);
+      line-height: 1.25;
+      margin-bottom: 1rem;
+    }
+
+    .hero p {
+      font-size: 1.15rem;
+      margin-bottom: 2rem;
+      opacity: 0.95;
+    }
+
+    .btn {
+      display: inline-block;
+      background-color: var(--accent);
+      color: #0b2e13;
+      font-weight: 700;
+      text-decoration: none;
+      padding: 0.85rem 2rem;
+      border-radius: 50px;
+      transition: transform 0.2s ease, background-color 0.2s ease;
+      border: none;
+      cursor: pointer;
+      font-family: inherit;
+      font-size: 1rem;
+    }
+
+    .btn:hover {
+      background-color: #81c784;
+      transform: translateY(-2px);
+    }
+
+    /* Sections */
+    section {
+      padding: 4.5rem 1.5rem;
+    }
+
+    .container {
+      max-width: 1140px;
+      margin: 0 auto;
+    }
+
+    .section-title {
+      text-align: center;
+      margin-bottom: 3rem;
+    }
+
+    .section-title h2 {
+      font-size: 2.1rem;
+      color: var(--primary);
+      margin-bottom: 0.5rem;
+    }
+
+    .section-title p {
+      color: var(--text-muted);
+      max-width: 600px;
+      margin: 0 auto;
+    }
+
+    /* About */
+    .about-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+      gap: 2.5rem;
+      align-items: center;
+    }
+
+    .about-img {
+      width: 100%;
+      height: 340px;
+      object-fit: cover;
+      border-radius: var(--radius);
+      box-shadow: var(--shadow);
+    }
+
+    .about-text h3 {
+      font-size: 1.6rem;
+      color: var(--primary);
+      margin-bottom: 1rem;
+    }
+
+    .about-text p {
+      color: var(--text-muted);
+      margin-bottom: 1rem;
+    }
+
+    /* Cards / Initiatives */
+    .cards-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 1.8rem;
+    }
+
+    .card {
+      background: var(--white);
+      padding: 2rem;
+      border-radius: var(--radius);
+      box-shadow: var(--shadow);
+      border-top: 4px solid var(--primary-light);
+      transition: transform 0.25s ease;
+    }
+
+    .card:hover {
+      transform: translateY(-5px);
+    }
+
+    .card-icon {
+      font-size: 2.2rem;
+      margin-bottom: 0.8rem;
+    }
+
+    .card h3 {
+      font-size: 1.3rem;
+      color: var(--primary);
+      margin-bottom: 0.6rem;
+    }
+
+    .card p {
+      color: var(--text-muted);
+      font-size: 0.98rem;
+    }
+
+    /* Impact Stats */
+    .stats {
+      background-color: var(--primary);
+      color: var(--white);
+    }
+
+    .stats-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+      gap: 2rem;
+      text-align: center;
+    }
+
+    .stat-box h3 {
+      font-size: 2.4rem;
+      color: #a5d6a7;
+      margin-bottom: 0.3rem;
+    }
+
+    .stat-box p {
+      font-size: 1.05rem;
+      opacity: 0.92;
+    }
+
+    /* Contact Form */
+    .contact-box {
+      max-width: 680px;
+      margin: 0 auto;
+      background: var(--white);
+      padding: 2.5rem;
+      border-radius: var(--radius);
+      box-shadow: var(--shadow);
+    }
+
+    .form-group {
+      margin-bottom: 1.2rem;
+    }
+
+    .form-group label {
+      display: block;
+      font-weight: 600;
+      margin-bottom: 0.4rem;
+      color: var(--text-dark);
+    }
+
+    .form-group input,
+    .form-group textarea {
+      width: 100%;
+      padding: 0.75rem 1rem;
+      border: 1px solid #cbd2d9;
+      border-radius: 8px;
+      font-family: inherit;
+      font-size: 1rem;
+    }
+
+    .form-group input:focus,
+    .form-group textarea:focus {
+      outline: none;
+      border-color: var(--primary-light);
+    }
+
+    .form-status {
+      margin-top: 1rem;
+      font-weight: 600;
+      color: var(--primary);
+      display: none;
+    }
+
+    /* Footer */
+    footer {
+      background-color: #102a12;
+      color: #d9e2ec;
+      text-align: center;
+      padding: 2rem 1.5rem;
+      font-size: 0.95rem;
+    }
+
+    @media (max-width: 720px) {
+      .nav-container {
+        flex-direction: column;
+        gap: 0.8rem;
+      }
+
+      nav ul {
+        gap: 1rem;
+        flex-wrap: wrap;
+        justify-content: center;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Header & Navigation -->
+  <header>
+    <div class="nav-container">
+      <a href="#" class="logo">🌿 Life Is Green</a>
+      <nav>
+        <ul>
+          <li><a href="#about">আমাদের কথা</a></li>
+          <li><a href="#initiatives">কার্যক্রম</a></li>
+          <li><a href="#impact">অর্জন</a></li>
+          <li><a href="#contact">যোগাযোগ</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <!-- Hero Section -->
+  <section class="hero">
+    <div class="hero-content">
+      <h1>সবুজ প্রকৃতি, নির্মল বাতাস ও সুস্থ আগামী</h1>
+      <p>Life Is Green একটি পরিবেশ সচেতন ও টেকসই জীবনধারার প্ল্যাটফর্ম—যেখানে বৃক্ষরোপণ, বর্জ্য ব্যবস্থাপনা এবং প্রকৃতির যত্নে আমরা সবাই একসাথে কাজ করি।</p>
+      <a href="#contact" class="btn">আমাদের সাথে যুক্ত হোন</a>
+    </div>
+  </section>
+
+  <!-- About Section -->
+  <section id="about">
+    <div class="container">
+      <div class="section-title">
+        <h2>আমাদের লক্ষ্য</h2>
+        <p>ছোট ছোট সবুজ পদক্ষেপই বদলে দিতে পারে আমাদের চারপাশের পরিবেশ ও ভবিষ্যৎ।</p>
+      </div>
+      <div class="about-grid">
+        <img
+          src="https://images.unsplash.com/photo-1542601906990-b4d3fb778b09?auto=format&fit=crop&w=1000&q=80"
+          alt="হাতে চারাগাছ ধরে রাখা সবুজ উদ্যোগের দৃশ্য"
+          class="about-img"
+        />
+        <div class="about-text">
+          <h3>কেন Life Is Green?</h3>
+          <p>শহুরে জীবনে সবুজের ছোঁয়া কমছে এবং জলবায়ু পরিবর্তনের প্রভাব বাড়ছে। Life Is Green কাজ করছে সাধারণ মানুষের মাঝে পরিবেশ সচেতনতা তৈরি ও বাস্তবসম্মত সবুজ উদ্যোগ গ্রহণে।</p>
+          <p>ছাদবাগান, বৃক্ষরোপণ অভিযান, প্লাস্টিক কমানো এবং পরিবেশবান্ধব অভ্যাস গড়ে তোলার মাধ্যমে আমরা একটি বাসযোগ্য পৃথিবী গড়তে চাই।</p>
+          <a href="#initiatives" class="btn">আমাদের কার্যক্রম দেখুন</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Initiatives Section -->
+  <section id="initiatives">
+    <div class="container">
+      <div class="section-title">
+        <h2>প্রধান কার্যক্রম</h2>
+        <p>প্রকৃতি ও পরিবেশ রক্ষায় আমাদের নিয়মিত উদ্যোগসমূহ।</p>
+      </div>
+      <div class="cards-grid">
+        <div class="card">
+          <div class="card-icon">🌱</div>
+          <h3>বৃক্ষরোপণ অভিযান</h3>
+          <p>বিদ্যালয়, মহল্লা ও পরিত্যক্ত স্থানে দেশীয় ও ফলদ গাছ রোপণ এবং নিয়মিত পরিচর্যা নিশ্চিত করা।</p>
+        </div>
+        <div class="card">
+          <div class="card-icon">♻️</div>
+          <h3>প্লাস্টিক ও বর্জ্য কমানো</h3>
+          <p>সিঙ্গেল-ইউজ প্লাস্টিকের ব্যবহার কমিয়ে পুনর্ব্যবহারযোগ্য ও পরিবেশবান্ধব বিকল্প ব্যবহারে উৎসাহ দেওয়া।</p>
+        </div>
+        <div class="card">
+          <div class="card-icon">🏡</div>
+          <h3>ছাদবাগান ও নগর সবুজায়ন</h3>
+          <p>ঘরের বারান্দা বা ছাদে সহজ উপায়ে বাগান তৈরি এবং প্রাকৃতিক কম্পোস্ট সার ব্যবহারের দিকনির্দেশনা।</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Impact Section -->
+  <section id="impact" class="stats">
+    <div class="container">
+      <div class="stats-grid">
+        <div class="stat-box">
+          <h3>১২,৫০০+</h3>
+          <p>রোপিত চারাগাছ</p>
+        </div>
+        <div class="stat-box">
+          <h3>৮৫+</h3>
+          <p>স্বেচ্ছাসেবক কার্যক্রম</p>
+        </div>
+        <div class="stat-box">
+          <h3>৩,২০০+</h3>
+          <p>সক্রিয় সদস্য ও সমর্থক</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Contact Section -->
+  <section id="contact">
+    <div class="container">
+      <div class="section-title">
+        <h2>যোগাযোগ করুন</h2>
+        <p>কোনো প্রশ্ন, স্বেচ্ছাসেবায় যুক্ত হওয়া বা যৌথ উদ্যোগের জন্য বার্তা পাঠান।</p>
+      </div>
+      <div class="contact-box">
+        <form id="contactForm">
+          <div class="form-group">
+            <label for="name">আপনার নাম</label>
+            <input type="text" id="name" name="name" placeholder="যেমন: তানভীর আহমেদ" required />
+          </div>
+          <div class="form-group">
+            <label for="email">ইমেইল ঠিকানা</label>
+            <input type="email" id="email" name="email" placeholder="example@email.com" required />
+          </div>
+          <div class="form-group">
+            <label for="message">আপনার বার্তা</label>
+            <textarea id="message" name="message" rows="4" placeholder="আপনার মতামত বা বার্তা লিখুন..." required></textarea>
+          </div>
+          <button type="submit" class="btn">বার্তা পাঠান</button>
+          <p class="form-status" id="formStatus">ধন্যবাদ! আপনার বার্তাটি গ্রহণ করা হয়েছে।</p>
+        </form>
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer>
+    <p>&copy; ২০২৬ Life Is Green। সর্বস্বত্ব সংরক্ষিত।</p>
+  </footer>
+
+  <script>
+    const form = document.getElementById('contactForm');
+    const statusText = document.getElementById('formStatus');
+
+    form.addEventListener('submit', function (e) {
+      e.preventDefault();
+      statusText.style.display = 'block';
+      form.reset();
+    });
+  </script>
+</body>
+</html>
